@@ -1,234 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almar55 Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Fondo dinámico animado */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background: linear-gradient(-45deg, #f5f6f7, #a8e6cf, #fdfdfd, #87ceeb);
-            background-size: 400% 400%;
-            animation: gradientBG 20s ease infinite;
-            transition: background 0.5s ease;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        header {
-            background-color: rgba(255,255,255,0.9);
-            padding: 25px 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: #a8e6cf;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-
-        nav a {
-            color: #333;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #87ceeb;
-            transform: scale(1.15);
-            text-shadow: 0 0 6px #87ceeb;
-        }
-
-        main {
-            padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        section {
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #a8e6cf;
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-        }
-
-        .project-card {
-            background-color: rgba(255,255,255,0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #333;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .project-card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #87ceeb;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .project-card a:hover {
-            color: #ffffff;
-            background-color: #87ceeb;
-            transform: scale(1.15);
-            box-shadow: 0 0 12px #87ceeb;
-        }
-
-        /* Micro-interacción adicional */
-        .project-card .extra-info {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: #87ceeb;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .project-card:hover .extra-info {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .project-card .extra-info svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px 20px;
-            background-color: rgba(255,255,255,0.9);
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        footer a {
-            color: #87ceeb;
-            text-decoration: none;
-            margin: 0 10px;
-            padding: 4px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #ffffff;
-            background-color: #87ceeb;
-            transform: scale(1.15);
-            box-shadow: 0 0 10px #87ceeb;
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almar55 Projects</title>
+<style>
+body {
+    margin:0; font-family: Arial, sans-serif; background:#000; color:#fdfdfd; display:flex; justify-content:center; align-items:center; height:100vh;
+    overflow:hidden;
+}
+.container {
+    display:flex; max-width:1200px; width:100%; padding:20px; align-items:center; gap:50px;
+}
+.left {
+    flex:1; animation:fadeIn 1.5s ease forwards; opacity:0;
+}
+.left h1 { font-size:3rem; margin-bottom:20px; color:#fdfdfd; }
+.left h2 { font-size:2rem; margin-bottom:15px; color:#333; }
+.left p { font-size:1.2rem; line-height:1.5; }
+.left a { display:inline-block; margin-top:15px; padding:8px 15px; color:#000; background:#fdfdfd; border-radius:5px; text-decoration:none; transition:0.3s; }
+.left a:hover { background:#87ceeb; color:#fff; }
+.right { flex:1; display:flex; justify-content:center; align-items:center; }
+.right img { max-width:100%; height:auto; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5); animation:fadeIn 2s ease forwards; opacity:0; }
+@keyframes fadeIn { to { opacity:1; } }
+.wave {
+    position:absolute; width:200%; height:200%; top:-50%; left:-50%;
+    background:radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
+    animation:moveWave 6s infinite linear;
+    pointer-events:none;
+}
+@keyframes moveWave { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+footer { position:absolute; bottom:20px; width:100%; text-align:center; }
+footer a { color:#87ceeb; margin:0 10px; text-decoration:none; transition:0.3s; }
+footer a:hover { color:#fff; }
+</style>
 </head>
 <body>
-    <header>
+<div class="wave"></div>
+<div class="container">
+    <div class="left">
         <h1>Almar55 Projects</h1>
-        <nav>
-            <a href="#crypto-ranking">CryptoRanking</a>
-            <a href="#zeus-aprende">Zeus Aprende Inglés</a>
-            <a href="#nft-halloween">NFT Halloween</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="crypto-ranking" class="project-card">
-            <h2>CryptoRanking</h2>
-            <p>Mini-aplicación que analiza criptos y rankings en tiempo real.</p>
-            <a href="https://cryptorankingup.vercel.app/" target="_blank">Ir a CryptoRanking</a>
-            <div class="extra-info">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
-                Live Data
-            </div>
-        </section>
-
-        <section id="zeus-aprende" class="project-card">
-            <h2>Zeus Aprende Inglés</h2>
-            <p>Aplicación para aprender inglés de forma divertida y práctica.</p>
-            <a href="https://aprende-ingles-to-be.vercel.app/" target="_blank">Ir a Zeus Aprende Inglés</a>
-            <div class="extra-info">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
-                Aprende Rápido
-            </div>
-        </section>
-
-        <section id="nft-halloween" class="project-card">
-            <h2>NFT Halloween</h2>
-            <p>Tu colección de 111 NFTs lista para el mint.</p>
-            <a href="https://opensea.io/es/collection/halloween-almar-pfp/overview" target="_blank">Ver NFT Halloween</a>
-            <div class="extra-info">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
-                Colección Exclusiva
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Sígueme en redes:</p>
-        <a href="https://farcaster.xyz/almar55" target="_blank">Farcaster</a>
-        <a href="https://base.app/profile/almar55" target="_blank">Base App</a>
-        <a href="https://zora.co/@almar55" target="_blank">Sora</a>
-        <a href="https://github.com/Zeus2604" target="_blank">GitHub</a>
-        <a href="https://x.com/Web3Innovator" target="_blank">X</a>
-    </footer>
-
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add('visible');
-                }
-            });
-        },
+        <h2>CryptoRanking</h2>
+        <p>Mini-aplicación que analiza criptos y rankings en tiempo real.</p>
+        <a href="https://cryptorankingup.vercel.app/" target="_blank">Ir a CryptoRanking</a>
+    </div>
+    <div class="right">
+        <img src="https://images.unsplash.com/photo-1600180758895-176e8fc933f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5fDB8MXxyYW5kb218MHx8cm9sZXh8fHx8fHwxNjk2MjM5OTM1&ixlib=rb-4.0.3&q=80&w=600" alt="Rolex">
+    </div>
+</div>
+<footer>
+<a href="https://farcaster.xyz/almar55" target="_blank">Farcaster</a>
+<a href="https://base.app/profile/almar55" target="_blank">Base App</a>
+<a href="https://zora.co/@almar55" target="_blank">Sora</a>
+<a href="https://github.com/Zeus2604" target="_blank">GitHub</a>
+<a href="https://x.com/Web3Innovator" target="_blank">X</a>
+</footer>
+</body>
+</html>
