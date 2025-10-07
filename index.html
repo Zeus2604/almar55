@@ -6,46 +6,53 @@
 <title>Almar55 Projects</title>
 <style>
 body {
-    margin:0; font-family: Arial, sans-serif; background:#000; color:#fdfdfd; display:flex; justify-content:center; align-items:center; height:100vh;
-    overflow:hidden;
+    margin:0; font-family: Arial, sans-serif; background:#0a0a0a; color:#fdfdfd; overflow-x:hidden;
+    background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.02), transparent 70%), 
+                      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.02), transparent 70%);
 }
 .container {
-    display:flex; max-width:1200px; width:100%; padding:20px; align-items:center; gap:50px;
+    display:flex; max-width:1200px; margin:50px auto; padding:20px; gap:50px; align-items:flex-start;
 }
 .left {
-    flex:1; animation:fadeIn 1.5s ease forwards; opacity:0;
+    flex:1;
 }
 .left h1 { font-size:3rem; margin-bottom:20px; color:#fdfdfd; }
-.left h2 { font-size:2rem; margin-bottom:15px; color:#333; }
-.left p { font-size:1.2rem; line-height:1.5; }
-.left a { display:inline-block; margin-top:15px; padding:8px 15px; color:#000; background:#fdfdfd; border-radius:5px; text-decoration:none; transition:0.3s; }
-.left a:hover { background:#87ceeb; color:#fff; }
-.right { flex:1; display:flex; justify-content:center; align-items:center; }
-.right img { max-width:100%; height:auto; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5); animation:fadeIn 2s ease forwards; opacity:0; }
-@keyframes fadeIn { to { opacity:1; } }
-.wave {
-    position:absolute; width:200%; height:200%; top:-50%; left:-50%;
-    background:radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
-    animation:moveWave 6s infinite linear;
-    pointer-events:none;
+.left .project { margin-bottom:30px; }
+.left .project h2 { font-size:1.8rem; margin-bottom:8px; color:#444; }
+.left .project p { font-size:1.1rem; line-height:1.5; margin-bottom:5px; }
+.left .project a { display:inline-block; padding:6px 12px; color:#000; background:#fdfdfd; border-radius:5px; text-decoration:none; transition:0.3s; }
+.left .project a:hover { background:#87ceeb; color:#fff; }
+.right {
+    flex:1; display:flex; justify-content:center; align-items:center;
 }
-@keyframes moveWave { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
-footer { position:absolute; bottom:20px; width:100%; text-align:center; }
+.right img { max-width:100%; height:auto; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+footer { text-align:center; margin-top:50px; }
 footer a { color:#87ceeb; margin:0 10px; text-decoration:none; transition:0.3s; }
 footer a:hover { color:#fff; }
 </style>
 </head>
 <body>
-<div class="wave"></div>
 <div class="container">
     <div class="left">
         <h1>Almar55 Projects</h1>
-        <h2>CryptoRanking</h2>
-        <p>Mini-aplicación que analiza criptos y rankings en tiempo real.</p>
-        <a href="https://cryptorankingup.vercel.app/" target="_blank">Ir a CryptoRanking</a>
+        <div class="project">
+            <h2>CryptoRanking</h2>
+            <p>Mini-aplicación que analiza criptos y rankings en tiempo real.</p>
+            <a href="https://cryptorankingup.vercel.app/" target="_blank">Ir a CryptoRanking</a>
+        </div>
+        <div class="project">
+            <h2>Zeus Aprende Inglés</h2>
+            <p>Aplicación para aprender inglés de forma divertida y práctica.</p>
+            <a href="https://aprende-ingles-to-be.vercel.app/" target="_blank">Ir a Zeus Aprende Inglés</a>
+        </div>
+        <div class="project">
+            <h2>NFT Halloween</h2>
+            <p>Tu colección de 111 NFTs lista para el mint.</p>
+            <a href="https://opensea.io/es/collection/halloween-almar-pfp/overview" target="_blank">Ver NFT Halloween</a>
+        </div>
     </div>
     <div class="right">
-        <img src="https://images.unsplash.com/photo-1600180758895-176e8fc933f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5fDB8MXxyYW5kb218MHx8cm9sZXh8fHx8fHwxNjk2MjM5OTM1&ixlib=rb-4.0.3&q=80&w=600" alt="Rolex">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Rolex_Submariner_116610LN.jpg" alt="Rolex">
     </div>
 </div>
 <footer>
