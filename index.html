@@ -6,40 +6,48 @@
     <title>Almar55 Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Fondo dinámico animado */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #121212, #1f1f1f);
-            color: #e0e0e0;
+            color: #333;
             line-height: 1.6;
+            background: linear-gradient(-45deg, #f5f6f7, #a8e6cf, #fdfdfd, #87ceeb);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
             transition: background 0.5s ease;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         header {
-            background-color: rgba(30,30,30,0.9);
+            background-color: rgba(255,255,255,0.9);
             padding: 25px 20px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            color: #ffb74d;
+            color: #a8e6cf;
             margin-bottom: 10px;
             font-size: 2.5rem;
         }
 
         nav a {
-            color: #e0e0e0;
+            color: #333;
             margin: 0 15px;
             text-decoration: none;
             font-weight: 600;
@@ -47,8 +55,9 @@
         }
 
         nav a:hover {
-            color: #ffb74d;
-            transform: scale(1.1);
+            color: #87ceeb;
+            transform: scale(1.15);
+            text-shadow: 0 0 6px #87ceeb;
         }
 
         main {
@@ -71,54 +80,96 @@
 
         h2 {
             font-family: 'Montserrat', sans-serif;
-            color: #ffb74d;
+            color: #a8e6cf;
             margin-bottom: 15px;
             font-size: 1.8rem;
         }
 
         .project-card {
-            background-color: rgba(40,40,40,0.9);
+            background-color: rgba(255,255,255,0.9);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
+            position: relative;
+            overflow: hidden;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .project-card a {
             display: inline-block;
             margin-top: 10px;
-            color: #ffb74d;
+            color: #87ceeb;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
         .project-card a:hover {
-            color: #ffd180;
+            color: #ffffff;
+            background-color: #87ceeb;
+            transform: scale(1.15);
+            box-shadow: 0 0 12px #87ceeb;
+        }
+
+        /* Micro-interacción adicional */
+        .project-card .extra-info {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #87ceeb;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-card:hover .extra-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card .extra-info svg {
+            width: 16px;
+            height: 16px;
         }
 
         footer {
             text-align: center;
             padding: 25px 20px;
-            background-color: rgba(30,30,30,0.9);
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
         footer a {
-            color: #ffb74d;
+            color: #87ceeb;
             text-decoration: none;
             margin: 0 10px;
-            transition: color 0.3s ease;
+            padding: 4px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
         footer a:hover {
-            color: #ffd180;
+            color: #ffffff;
+            background-color: #87ceeb;
+            transform: scale(1.15);
+            box-shadow: 0 0 10px #87ceeb;
         }
+
     </style>
 </head>
 <body>
@@ -136,18 +187,30 @@
             <h2>CryptoRanking</h2>
             <p>Mini-aplicación que analiza criptos y rankings en tiempo real.</p>
             <a href="https://cryptorankingup.vercel.app/" target="_blank">Ir a CryptoRanking</a>
+            <div class="extra-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
+                Live Data
+            </div>
         </section>
 
         <section id="zeus-aprende" class="project-card">
             <h2>Zeus Aprende Inglés</h2>
             <p>Aplicación para aprender inglés de forma divertida y práctica.</p>
             <a href="https://aprende-ingles-to-be.vercel.app/" target="_blank">Ir a Zeus Aprende Inglés</a>
+            <div class="extra-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
+                Aprende Rápido
+            </div>
         </section>
 
         <section id="nft-halloween" class="project-card">
             <h2>NFT Halloween</h2>
             <p>Tu colección de 111 NFTs lista para el mint.</p>
             <a href="https://opensea.io/es/collection/halloween-almar-pfp/overview" target="_blank">Ver NFT Halloween</a>
+            <div class="extra-info">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.91 2.24L14 12l-2-1.52L10 12l1.91-3.76L8 6l2.91-.74L12 2z"/></svg>
+                Colección Exclusiva
+            </div>
         </section>
     </main>
 
@@ -157,10 +220,10 @@
         <a href="https://base.app/profile/almar55" target="_blank">Base App</a>
         <a href="https://zora.co/@almar55" target="_blank">Sora</a>
         <a href="https://github.com/Zeus2604" target="_blank">GitHub</a>
+        <a href="https://x.com/Web3Innovator" target="_blank">X</a>
     </footer>
 
     <script>
-        // Animación simple al hacer scroll
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -168,11 +231,4 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-</body>
-</html>
+        },
